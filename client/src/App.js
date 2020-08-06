@@ -1,6 +1,7 @@
 import React from 'react';
 import "bootstrap/dist/css/bootstrap.css";
 import './App.css';
+import Auth from "./Auth/Auth";
 
 
 class App extends React.Component{
@@ -31,6 +32,7 @@ addItem (e ) {
   console.log(newItem);
 }
 
+
   render ( ) {
     return (
       <div className="App">
@@ -42,6 +44,7 @@ addItem (e ) {
           <button type="submit">Add</button>
         </form>
       </header>
+      <Auth/>
       </div>
     )}
 }
