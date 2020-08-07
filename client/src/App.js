@@ -3,6 +3,9 @@ import React, { useEffect, useState } from "react";
 import "./App.css";
 import TodoForm from "./Splash/TodoForm";
 import TodoList from "./Splash/TodoList";
+import Logo from "./assets/logo.png";
+import Auth from "./Auth/Auth";
+
 
 const LOCAL_STORAGE_KEY = "react-todo-list-todos";
 
@@ -59,6 +62,21 @@ function App() {
       />
     </div>
   );
+
+  render ( ) {
+    return (
+      <div className="App">
+      <header> 
+        <form id="to-do-form" onSubmit={this.addItem}>
+              <input type="text" placeholder="Enter Text" 
+                value={this.state.currentItem.text}
+                onChange={this.handleInput}/>
+          <button type="submit">Add</button>
+        </form>
+      </header>
+      <Auth/>
+      </div>
+    )}
 }
 
 export default App;
