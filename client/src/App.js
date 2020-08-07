@@ -7,8 +7,6 @@ import Logo from "./assets/logo.png";
 
 const LOCAL_STORAGE_KEY = "react-todo-list-todos";
 
-
-
 function App( ) {
   const [todos, setTodos] = useState([ ]) ;
 
