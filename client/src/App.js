@@ -1,68 +1,41 @@
 import Typography from "@material-ui/core/Typography";
 import React, { useEffect, useState } from "react";
 import "./App.css";
-import TodoForm from "./Splash/TodoForm";
-import TodoList from "./Splash/TodoList";
 import Logo from "./assets/logo.png";
+import Navbar from "./Navbar/Navbar";
 import Auth from "./Auth/Auth";
+import SplashIndex from "./Splash/SplashIndex";
 import { render } from "@testing-library/react";
 
-
-const LOCAL_STORAGE_KEY = "react-todo-list-todos";
-
 function App() {
-  const [todos, setTodos] = useState([]);
 
-  useEffect(() => {
-    // fires when app component mounts to the DOM
-    const storageTodos = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY));
-    if (storageTodos) {
-      setTodos(storageTodos);
-    }
-  }, []);
+  const [sessionToken, setSessionToken] = useState(undefined);
+  console.log(sessionToken);
 
-  useEffect(() => {
-    // fires when todos array gets updated
-    localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(todos));
-  }, [todos]);
-
-  function addTodo(todo) {
-    // adds new todo to beginning of todos array
-    setTodos([todo, ...todos]);
+  const viewConductor = () => {
+    return sessionToken !== undefined ? 
+      <SplashIndex token={sessionToken}/> :
+      <Auth updateToken={updateToken}/>
   }
 
-  function toggleComplete(id) {
-    setTodos(
-      todos.map(todo => {
-        if (todo.id === id) {
-          return {
-            ...todo,
-            completed: !todo.completed
-          };
-        }
-        return todo;
-      })
-    );
+  const updateToken = newToken => {
+    localStorage.setItem('token: ', newToken);
+    setSessionToken(newToken)
   }
 
-  function removeTodo(id) {
-    setTodos(todos.filter(todo => todo.id !== id));
+  const clearToken = () => {
+    localStorage.clear();
+    setSessionToken(undefined);
   }
 
   return (
     <div className="App">
-      <Typography style={{ padding: 16 }} variant="h1">
-        List Buddy
-        
-      </Typography>
-      <TodoForm addTodo={addTodo} />
-      <TodoList
-        todos={todos}
-        removeTodo={removeTodo}
-        toggleComplete={toggleComplete}
-      />
+      <Navbar />
+      <Auth />
+      {viewConductor()}
+      
     </div>
   );
+}
 
-  }
 export default App;
