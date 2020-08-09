@@ -4,15 +4,17 @@ import Todo from "./Todo";
 
 function TodoList({ todos, removeTodo, toggleComplete }) {
   return (
-    <List>
-      {todos.map(todo => (
-        <Todo
-          key={todo.id}
-          todo={todo}
-          removeTodo={removeTodo}
-          toggleComplete={toggleComplete}/>
-      ))}
-    </List>
+    <div>
+      <List>
+        {todos.map(todo => (
+          <Todo
+            key={todo.id}
+            todo={todo}
+            removeTodo={removeTodo}
+            toggleComplete={toggleComplete}/>
+        ))}
+      </List>
+    </div>
   );
 }
 

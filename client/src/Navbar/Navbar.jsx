@@ -1,36 +1,23 @@
-import React, {useState} from 'react';
-import { //1
-  Navbar,
-  NavbarBrand,
-  Collapse,
-  NavbarToggler,
-  Nav,
-  NavItem,
-  Button
-} from 'reactstrap';
+import React from 'react';
+import './Navbar.css';
+import logo from '../assets/logo.png';
+import Logout from './Logout/Logout'
 
-const Sitebar = (props) => { 
-  const [isOpen, setIsOpen] = useState(false);
-  const toggle = () => {
-  let newIsOpen = !isOpen;
-  setIsOpen(newIsOpen);
-  }
-  
-  return (
-    <Navbar color="faded" light expand="md">
-      <NavbarBrand href="/">Workout Log</NavbarBrand>
-      <NavbarToggler onClick={toggle}/>
-      <Collapse isOpen={isOpen} navbar>
-        <Nav className="ml-auto" navbar>
-          <NavItem>
-            <Button onClick={props.clickLogout}>Logout</Button>
-          </NavItem>
-        </Nav>
-      </Collapse>
-    </Navbar>
-  )
+const Navbar = (props) => {
+    console.log('Navbar:', props)
+    return (
+        <div>
+            <nav>
+                <img id="logo" src={logo} alt="list buddy logo"/>
+                
+                <Logout clearToken={props.clearToken}/>
+            </nav>
+        </div>
+    )
 }
 
+export default Navbar;
 
 
-export default Sitebar;
+
+

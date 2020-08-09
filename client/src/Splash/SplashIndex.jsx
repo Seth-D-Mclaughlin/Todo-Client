@@ -4,7 +4,6 @@ import TodoForm from "./TodoForm";
 import TodoList from "./TodoList";
 import { render } from "@testing-library/react";
 
-
 const LOCAL_STORAGE_KEY = "react-todo-list-todos";
 
 function SplashIndex() {

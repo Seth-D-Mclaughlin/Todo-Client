@@ -59,7 +59,7 @@ const Auth = (props) => {
         }
     })
     .then(res => res.json())
-    .then(json => console.log(json))
+    .then(json => props.updateToken(json.sessionToken))
 }
 
   return(
