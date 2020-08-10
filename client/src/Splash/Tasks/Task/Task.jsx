@@ -1,4 +1,6 @@
 import React from 'react';
+//this page imports our task from the database 
+
 
 const Task = (props) => {
 

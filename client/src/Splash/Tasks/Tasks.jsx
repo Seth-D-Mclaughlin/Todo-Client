@@ -1,5 +1,9 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, Component} from 'react';
+import Typography from "@material-ui/core/Typography";
+import {Container, Row, Col} from 'reactstrap';
 import Task from './Task/Task';
+import TaskCreate from './Task/TaskCreate';
+
 
 
 const Tasks = (props) => {
@@ -21,21 +25,11 @@ const Tasks = (props) => {
     }, []);
     
     return(
-        <table>
-            <thead>
-                <tr>
-                    <th>Todo</th>
-                    <th>Notes</th>
-                    <th>Important</th>
-                    <th>Complete</th>
-                </tr>
-            </thead>
-
-            <tbody>
-                {/* below we are telling our DOM to display our task component AND we are telling react to past down the prop so pie can use the prop*/}
-                <Task task={tasks}/> 
-            </tbody>
-        </table>
+        <div className="App">
+            <Typography style={{ padding: 16 }} variant="h1">List Buddy </Typography>
+            <TaskCreate token={props.token}/>
+            <Task task={tasks}/> 
+      </div> 
     )
 
 }
