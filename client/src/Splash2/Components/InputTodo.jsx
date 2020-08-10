@@ -2,12 +2,19 @@
 import React, { Fragment, useState } from "react";
 
 const InputTodo = ( ) => {
-  const [description, setDescription] = useState("");
+  const [title, setTitle] = useState("")
+  const [notes, setNotes] = useState("")
+  const [isImportant, setisImportant] = useState(false)
 
   const onSubmitForm = async e => {
     e.preventDefault( );
     try {
-      const body = { description };
+      const body = { "task":{
+          "title" : title,
+          "notes" : notes,
+          "isImportant" : isImportant,
+          // "owner" : 
+      } };
       const response = await fetch("http://localhost:3001/tasks", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -21,18 +28,35 @@ const InputTodo = ( ) => {
   };
 
   return (
-    <Fragment>
-      <h1 className="text-center mt-5">Buddy List</h1>
-      <form className="d-flex mt-5" onSubmit={onSubmitForm}>
+  <>
+    <h1 className="text-center mt-5">Buddy List</h1>
+    <form className="d-flex mt-5" onSubmit={onSubmitForm}>
         <input
           type="text"
           className="form-control"
-          value={description}
-          onChange={e => setDescription(e.target.value)}
-        />
+          value={title}
+          onChange={e => setTitle(e.target.value)}
+          placeholder="Title"
+          />
+        <input
+          type="text"
+          className="form-control"
+          value={notes}
+          onChange={e => setNotes(e.target.value)}
+          placeholder="Notes"
+          
+          />
+          
+        <input
+          type="checkbox"
+          className="form-control"
+          value={isImportant}
+          onChange={e => setisImportant(e.target.value)}
+          />
         <button className="btn btn-success">Add</button>
       </form>
-    </Fragment>
+          </>
+    
   );
 };
 

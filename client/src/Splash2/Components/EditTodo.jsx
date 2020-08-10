@@ -1,14 +1,18 @@
 import React, { Fragment, useState } from "react";
 
 const EditTodo = ({ todo }) => {
-  const [description, setDescription] = useState(todo.description);
-
-  const updateDescription = async e => {
+  const [title, setTitle] = useState()
+  const [notes, setNotes] = useState()
+  const [isImportant, setisImportant] = useState()
+  const [id, setId] = useState()
+  
+  
+  const updateTodo = async e => {
     e.preventDefault( );
     try {
-      const body = { description };
+      const body = { notes };
       const response = await fetch(
-        `http://localhost:3001/tasks/${task_id}`,
+        `http://localhost:3001/tasks/${id}`,
         {
           method: "PUT",
           headers: { "Content-Type": "application/json" },
@@ -35,8 +39,8 @@ const EditTodo = ({ todo }) => {
 
       <div
         class="modal"
-        id={`id${todo.todo_id}`}
-        onClick={( ) => setDescription(todo.description)}
+        id={`id${todo.id}`}
+        onClick={( ) => setNotes(todo.notes)}
       >
         <div class="modal-dialog">
           <div class="modal-content">
@@ -46,7 +50,7 @@ const EditTodo = ({ todo }) => {
                 type="button"
                 class="close"
                 data-dismiss="modal"
-                onClick={( ) => setDescription(todo.description)}> &times;
+                onClick={( ) => setNotes(todo.notes)}> &times;
               </button>
             </div>
 
@@ -54,8 +58,8 @@ const EditTodo = ({ todo }) => {
               <input
                 type="text"
                 className="form-control"
-                value={description}
-                onChange={e => setDescription(e.target.value)} />
+                value={notes}
+                onChange={e => setNotes(e.target.value)} />
             </div>
 
             <div class="modal-footer">
@@ -63,13 +67,13 @@ const EditTodo = ({ todo }) => {
                 type="button"
                 class="btn btn-warning"
                 data-dismiss="modal"
-                onClick={e => updateDescription(e)}> Edit
+                onClick={e => updateTodo(e)}> Edit
               </button>
               <button
                 type="button"
                 class="btn btn-danger"
                 data-dismiss="modal"
-                onClick={( ) => setDescription(todo.description)}
+                onClick={( ) => setNotes(todo.description)}
               >
                 Close
               </button>

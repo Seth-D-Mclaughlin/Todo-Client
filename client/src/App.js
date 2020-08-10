@@ -7,14 +7,13 @@ import InputTodo from "./Splash2/Components/InputTodo";
 import ListTodos from "./Splash2/Components/ListTodos";
 
 function App() {
-  return (
-    <Fragment>
+    return (
       <div className="container">
         <InputTodo />
         <ListTodos />
       </div>
-    </Fragment>
   );
+
 }
 
 export default App;
