@@ -27,6 +27,7 @@ const TodoForm = (props) => {
         setNotes('');
         setImportant('');
         setComplete('');
+        props.fetchTodos();
     })
   }
 

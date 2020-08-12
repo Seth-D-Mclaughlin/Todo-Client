@@ -104,8 +104,8 @@ const SplashIndex = (props) => {
       <Typography style={{ padding: 16 }} variant="h1">
         List Buddy
       </Typography>
-      <TodoForm />
-      <TodoList todos={todos} fetchTodos={fetchTodos}/>
+      <TodoForm fetchTodos={fetchTodos}/>
+      <TodoList token={props.token} fetchTodos={fetchTodos} todos={todos}/>
     </div>
   )
   }
