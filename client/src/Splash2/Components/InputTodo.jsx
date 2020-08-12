@@ -1,4 +1,3 @@
-
 import React, { Fragment, useState } from "react";
 
 const InputTodo = ( ) => {
@@ -61,3 +60,4 @@ const InputTodo = ( ) => {
 };
 
 export default InputTodo;
+
