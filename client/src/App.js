@@ -1,17 +1,37 @@
-import React, { Fragment } from "react";
+import React, {useState, useEffect} from 'react';
 import "./App.css";
-
-//components
-
-import InputTodo from "./Splash2/Components/InputTodo";
-import ListTodos from "./Splash2/Components/ListTodos";
+import Typography from "@material-ui/core/Typography";
+import Sitebar from './Navbar/Navbar';
+import Auth from './Auth/Auth';
+import SplashIndex from './Splash/SplashIndex';
 
 function App() {
-    return (
-      <div className="container">
-        <InputTodo />
-        <ListTodos />
-      </div>
+
+  const [sessionToken, setSessionToken] = useState(undefined); 
+    console.log(sessionToken);
+
+  const protectedView = () => {
+    return sessionToken !== undefined ?
+      <SplashIndex token={sessionToken}/> :
+      <Auth updateToken={updateToken}/>
+  }
+
+  const updateToken = newToken => {
+    localStorage.setItem('token: ', newToken);
+    setSessionToken(newToken)
+  }
+
+  const clearToken = () => {
+    localStorage.clear();
+    setSessionToken(undefined);
+  }
+
+  
+  return (
+    <div >
+        <Sitebar clearToken={clearToken} />
+        {protectedView()}
+    </div>
   );
 
 }
