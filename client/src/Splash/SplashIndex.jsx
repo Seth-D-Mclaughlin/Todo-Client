@@ -11,7 +11,7 @@ const SplashIndex = (props) => {
   const [todoActive, setTodoActive] = useState(false);
   const [todoUpdate, setTodoUpdate] = useState({});
   const fetchTodos = () => {
-      fetch('http://localhost:3001/task/', { /// we can't do a get min becuase the get fetch doesn't work but we still need to make it match the user only not a get all
+      fetch('http://localhost:3001/task/mine', { /// we can't do a get min becuase the get fetch doesn't work but we still need to make it match the user only not a get all
           method: 'GET',
           headers: {
               'Content-Type': 'application/json',
@@ -122,7 +122,7 @@ const SplashIndex = (props) => {
       <Typography style={{ padding: 16 }} variant="h1">
         List Buddy
       </Typography>
-      <TodoForm fetchTodos={fetchTodos}/>
+      <TodoForm fetchTodos={fetchTodos} token={props.token}/>
       <TodoList token={props.token} fetchTodos={fetchTodos} todos={todos} editSelectedTodo={editSelectedTodo} updateToggleOn={updateToggleOn}/>
       {todoActive ? <TodoEdit todoUpdate={todoUpdate} updateToggleOff={updateToggleOff} fetchTodos={fetchTodos} token={props.token}/> : <> </>}
     </div>

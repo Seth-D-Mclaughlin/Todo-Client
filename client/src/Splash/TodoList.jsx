@@ -29,23 +29,5 @@ const TodoList = (props) => {
             </tr>
         )
     })
-
-    return(
-        <>
-        <h3>Todo List</h3>
-        <hr/>
-        <Table striped>
-            <thead>
-                <tr>
-                    <th>id</th>
-                    <th>Title</th>
-                    <th>Notes</th>
-                </tr>
-            </thead>
-            <tbody>
-            </tbody>
-        </Table>
-        </>
-    )
 }
 export default TodoList;

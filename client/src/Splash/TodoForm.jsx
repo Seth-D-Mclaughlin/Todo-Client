@@ -18,7 +18,7 @@ const TodoForm = (props) => {
       body: JSON.stringify({task:{title: title, notes: notes, isImportant: important, isComplete: complete}}),
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OSwiaWF0IjoxNTk3MTcyOTYwLCJleHAiOjE1OTcyNTkzNjB9.e4ZA0bbMDDkWEyG7-X7nYGD-DhGkcc7O0ToTYCYxiZg" // change back to props.token when we learn how to pass a prop to a grandchild
+        'Authorization': props.token // change back to props.token when we learn how to pass a prop to a grandchild
     }
     }).then(response => response.json()
       )  .then((logData) => {
