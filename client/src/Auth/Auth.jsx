@@ -72,7 +72,7 @@ const Auth = (props) => {
                 <br/>
                 <br/>            
             <form onSubmit={handleSubmit}>
-                <h1>{title( )}</h1>
+                <h1 class="text-warning">{title( )}</h1>
                 <br/>
                 {signupFields( )}
                 <p class="text-light">Email:</p>
@@ -91,6 +91,8 @@ const Auth = (props) => {
                 <button type="submit" class= 'btn btn-outline-warning' >Submit</button>
   
             </form>
+
+            
         </div>
     )
   }

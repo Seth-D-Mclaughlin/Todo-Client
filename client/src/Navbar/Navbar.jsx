@@ -10,12 +10,24 @@ export class Navbar extends Component {
 
     render( ) {
         return (
-            <nav className='navbar navbar-expland-sm bg-warning navbar-dark fixed-top'>
-      <Typography style={{ padding: 2
-     }} variant="h4"> List Buddy
-      </Typography>
+            <div class="container">
+               <nav className='navbar navbar-expland-sm bg-secondary navbar-dark fixed-top'>
+                   <a href="#home" class="navbar-brand">
+                       {/* <img src="assets/logo.png"></img> */}
 
-    </nav>
+                   <h2>List Buddy</h2>
+
+                   </a>
+                   
+    
+      <ul style= "list-style: none;">
+     <li> Home  About Contact Us </li>
+      
+      </ul>
+      </nav>
+      </div>
+ 
+
         )
     }
 }
