@@ -3,11 +3,11 @@ import CloseIcon from "@material-ui/icons/Close";
 import React from "react";
 
 function Todo({ todo, toggleComplete, removeTodo }) {
-  function handleCheckboxClick() {
+  function handleCheckboxClick( ) {
     toggleComplete(todo.id);
   }
 
-  function handleRemoveClick() {
+  function handleRemoveClick( ) {
     removeTodo(todo.id);
   }
 
