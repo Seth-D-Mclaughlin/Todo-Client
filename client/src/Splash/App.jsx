@@ -1,15 +1,16 @@
 // import Typography from "@material-ui/core/Typography";
 // import React, { useEffect, useState } from "react";
 // import "./App.css";
-// import TodoForm from "./components/TodoForm";
-// import TodoList from "./components/TodoList";
+// import TodoForm from "./Splash/TodoForm";
+// import TodoList from "./Splash/TodoList";
+
 
 // const LOCAL_STORAGE_KEY = "react-todo-list-todos";
 
-// function App() {
+// function App( ) {
 //   const [todos, setTodos] = useState([]);
 
-//   useEffect(() => {
+//   useEffect(( ) => {
 //     // fires when app component mounts to the DOM
 //     const storageTodos = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY));
 //     if (storageTodos) {
@@ -17,7 +18,7 @@
 //     }
 //   }, []);
 
-//   useEffect(() => {
+//   useEffect(( ) => {
 //     // fires when todos array gets updated
 //     localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(todos));
 //   }, [todos]);
@@ -48,7 +49,8 @@
 //   return (
 //     <div className="App">
 //       <Typography style={{ padding: 16 }} variant="h1">
-//         React Todo
+//         List Buddy
+
 //       </Typography>
 //       <TodoForm addTodo={addTodo} />
 //       <TodoList
