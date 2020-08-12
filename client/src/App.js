@@ -33,6 +33,7 @@ function App() {
         {protectedView()}
     </div>
   );
+
 }
 
 export default App;

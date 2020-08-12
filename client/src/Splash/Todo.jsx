@@ -30,3 +30,4 @@ function Todo({ todo, toggleComplete, removeTodo }) {
 }
 
 export default Todo;
+
