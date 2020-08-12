@@ -34,7 +34,8 @@ function App() {
       {protectedView()}
       <Navbar/>
     </div>
+
   )
 }
 
-export default App
+export default App;
