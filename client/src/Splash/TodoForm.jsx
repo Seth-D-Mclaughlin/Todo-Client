@@ -23,9 +23,22 @@ const TodoForm = (props) => {
       }),
       headers: {
         'Content-Type': 'application/json',
+<<<<<<< HEAD
         Authorization:
           'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OSwiaWF0IjoxNTk3MTcyOTYwLCJleHAiOjE1OTcyNTkzNjB9.e4ZA0bbMDDkWEyG7-X7nYGD-DhGkcc7O0ToTYCYxiZg', // change back to props.token when we learn how to pass a prop to a grandchild
       },
+=======
+        'Authorization': props.token // change back to props.token when we learn how to pass a prop to a grandchild
+    }
+    }).then(response => response.json()
+      )  .then((logData) => {
+        console.log(logData);
+        setTitle('');
+        setNotes('');
+        setImportant('');
+        setComplete('');
+        props.fetchTodos();
+>>>>>>> 8df95d11e3b98e579491e1205462cba0c151b4e9
     })
       .then((response) => response.json())
       .then((logData) => {
@@ -39,6 +52,7 @@ const TodoForm = (props) => {
 
   return (
     <>
+<<<<<<< HEAD
       <h1 className='text-center mt-5'>List Buddy</h1>
 
       <form onSubmit={handleSubmit}>
@@ -49,6 +63,18 @@ const TodoForm = (props) => {
             value={title}
             onChange={(e) => setTitle(e.target.value)}
             placeholder='Title'
+=======
+    {/* <h1 className="text-center mt-5">List Buddy</h1> */}
+      
+    <form onSubmit={handleSubmit} >
+        <div className="form-group">
+        <input
+          type="text"
+          className="form-control"
+          value={title}
+          onChange={e => setTitle(e.target.value)}
+          placeholder="Title"
+>>>>>>> 8df95d11e3b98e579491e1205462cba0c151b4e9
           />
         </div>
         <div className='form-group'>
@@ -59,6 +85,7 @@ const TodoForm = (props) => {
             onChange={(e) => setNotes(e.target.value)}
             placeholder='Notes'
           />
+<<<<<<< HEAD
         </div>
         <div className='form-check'>
           <input
@@ -79,6 +106,11 @@ const TodoForm = (props) => {
           <label className='form-check-label'>Complete</label>
         </div>
         <button className='btn btn-warning'>Add</button>
+=======
+          </div>
+
+        <button className="btn btn-outline-warning">Add</button>
+>>>>>>> 8df95d11e3b98e579491e1205462cba0c151b4e9
       </form>
     </>
   )

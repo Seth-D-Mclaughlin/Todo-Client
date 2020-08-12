@@ -1,7 +1,7 @@
-
-// import './Navbar.css';
-import Typography from "@material-ui/core/Typography";
+import React from 'react';
+import './Navbar.css';
 import logo from '../assets/logo.png';
+<<<<<<< HEAD
 import Logout from './Logout/Logout';
 import React, { Component, useState } from 'react';
 import {Form, FormGroup, Label, Input, Button} from 'reactstrap';
@@ -30,26 +30,24 @@ export class Navbar extends Component {
 
         )
     }
+=======
+import Logout from './Logout/Logout'
+
+const Navbar = (props) => {
+    console.log('Navbar:', props)
+    return (
+        <div>
+            <nav>
+                <img id="logo" src={logo} alt="list buddy logo"/>
+                
+                <Logout clearToken={props.clearToken}/>
+            </nav>
+        </div>
+    )
+>>>>>>> 8df95d11e3b98e579491e1205462cba0c151b4e9
 }
 
-
-
 export default Navbar;
-
-
-// const Navbar = (props) => {
-//     console.log('Navbar:', props)
-//     return (
-//         <div>
-//             <nav>
-//                 <img id="logo" src={logo} alt="list buddy logo"/>
-                
-//                 <Logout clearToken={props.clearToken}/>
-//             </nav>
-//         </div>
-//     )
-// }
-
 
 
 
