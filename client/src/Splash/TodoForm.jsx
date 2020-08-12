@@ -33,7 +33,7 @@ const TodoForm = (props) => {
 
   return(
     <>
-    <h1 className="text-center mt-5">Buddy List</h1>
+    {/* <h1 className="text-center mt-5">List Buddy</h1> */}
       
     <form onSubmit={handleSubmit} >
         <div className="form-group">
@@ -54,25 +54,8 @@ const TodoForm = (props) => {
           placeholder="Notes"
           />
           </div>
-        <div className="form-check">
-        <input
-          type="checkbox"
-          className="form-check-input"
-          value={setImportant}
-          onChange={e => setImportant(e.target.value)}
-          />
-        <label className="form-check-label">Important</label>
-          </div>
-          <div className="form-check">
-        <input
-          type="checkbox"
-          className="form-check-input"
-          value={setComplete}
-          onChange={e => setComplete(e.target.value)}
-          />
-        <label className="form-check-label">Complete</label>
-          </div>
-        <button className="btn btn-success">Add</button>
+
+        <button className="btn btn-outline-warning">Add</button>
       </form>
           </>
   )
