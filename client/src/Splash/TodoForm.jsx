@@ -55,7 +55,7 @@ const TodoForm = (props) => {
           />
           </div>
 
-        <button className="btn btn-dark mt-1">Add ToDo</button>
+        <button className="btn btn-outline-warning">Add</button>
       </form>
           </>
   )

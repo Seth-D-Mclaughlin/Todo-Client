@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import Typography from "@material-ui/core/Typography";
 import {Container, Row, Col} from 'reactstrap';
+import Signup from './Signup';// we can delete this import and the original .jsx (yes I'm sure we don't need the .jsx)
+import Login from './Login'; // we can delete this import and the original .jsx (yes I'm sure we don't need the .jsx)
 
 const Auth = (props) => {
 
@@ -26,7 +28,7 @@ const Auth = (props) => {
     const signupFields = ( ) => !login ?
         (
             <div>
-                {/* <label htmlFor="firstName">First Name:</label> */}
+                <label htmlFor="firstName">First Name:</label>
                 <br/>
                 <input type="text" id="firstName" value={firstName} onChange={(e) => setFirstName(e.target.value)} />
                 <br/>
@@ -62,37 +64,35 @@ const Auth = (props) => {
   }
   
     return(
-        <div class='login' mb-5>
-        <div class='container'>
-          <div class='row'>
-            <div class='col-sm-6'>
-              <div class='card bg-info text-center card-form'>
-                <div class='card-body'>          
-                <form onSubmit={handleSubmit}>
+        
+        <div class='text-center'>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>            
+            <form onSubmit={handleSubmit}>
                 <h1>{title( )}</h1>
                 <br/>
                 {signupFields( )}
-                <div class="form-group">
-                  <input type="email" class="form-control form-control-lg" placeholder="Email"  id='email' value={email} onChange={(e) => setEmail(e.target.value)}>
-                  </input>
-                </div>
-                <div class='form-group'>                 
-                  <input type="password" class="form-control form-control-lg" placeholder="Password" id='password' value={password}  onChange={(e) => setPassword(e.target.value)} >
-                  </input>
-                </div>
+                <p class="text-light">Email:</p>
+                {/* <label htmlFor="email">Email:</label> */}
+                <input type="text" id='email' value={email} onChange={(e) => setEmail(e.target.value)} />
                 <br/>
                 <br/>
-                <button type="submit" class="btn btn-outline-dark btn-block" >Login</button>
+                <p class="text-light">Password:</p>
+                {/* <label htmlFor="password" >Password:</label> */}
+                <input type="password" id="password" value={password} onChange={(e) => setPassword(e.target.value)} />
                 <br/>
-                <button onClick={loginToggle} class="btn btn-outline-dark btn-block">{login ? 'Signup' : 'Login'}</button> 
-                </form>
-              </div>
-            </div>
-          </div>
+                <br/>
+                <button onClick={loginToggle} class= 'btn btn-outline-warning' p-3 >{login ? 'Signup' : 'Login'}</button> 
+                <br/>
+                <br/>
+                <button type="submit" class= 'btn btn-outline-warning' >Submit</button>
+  
+            </form>
         </div>
-      </div>
-    </div>
-  )
-}
-
-export default Auth
+    )
+  }
+  
+  export default Auth;
