@@ -1,5 +1,52 @@
 
+
+.App {
+  background: #426e86;
+  margin-top: 225px;
+  margin-left: 800px;
+  text-align: center;
+  display: relative;
+  width: 20%;
+  height: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 15px;
+
+ 
+}
+
+button{
+  margin: 43px;
+  
+ 
+}
+.everything {
+  overflow: auto;
+  width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.blocks {
+  width: 50%;
+  float: left;
+}
+
+
+
+
+
+
+
 /*  gi
+
+
+
+
+
+
+
 
 /* #home-section {
   background: url(./assets/todo.jpg);
