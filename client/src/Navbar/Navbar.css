@@ -1,0 +1,28 @@
+#logo {
+  height: 75px;
+  
+}
+
+body {
+  background: #426e86;
+  
+}
+
+.navbar {
+  border-bottom: #2f3131 3px solid;
+  opacity: 0.8;
+}
+
+.login {
+  /* margin-top: 25px; */
+  margin-left: 450px;
+
+}
+
+.logout {
+  height: 75px;
+  
+} 
+
+
+
