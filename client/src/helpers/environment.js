@@ -6,7 +6,7 @@ switch (window.location.hostname) {
     break;
 
     case 'todo-client-deploy.herokuapp.com':
-      APIURL = 'https://todo-client-deploy.herokuapp.com'
+      APIURL = 'https://dashboard.heroku.com/apps/efa-wd-listbuddy'
 }
 
 export default APIURL;
