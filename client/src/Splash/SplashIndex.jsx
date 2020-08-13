@@ -1,5 +1,4 @@
 import Typography from "@material-ui/core/Typography";
-import "./App.css";
 import React, { useEffect, useState } from "react";
 import TodoForm from "../Splash/TodoForm";
 import TodoList from "../Splash/TodoList";

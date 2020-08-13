@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react'
 import './App.css'
 import Typography from '@material-ui/core/Typography'
-import Navbar from './Navbar/Navbar'
+import Sitebar from './Navbar/Navbar'
 import Auth from './Auth/Auth'
 import SplashIndex from './Splash/SplashIndex'
-
+import Navbar from './Navbar/Navbar'
 
 function App() {
   const [sessionToken, setSessionToken] = useState(undefined)
@@ -30,8 +30,9 @@ function App() {
 
   return (
     <div>
-      <Navbar clearToken={clearToken} />
+      <Sitebar clearToken={clearToken} />
       {protectedView()}
+      <Navbar/>
     </div>
 
   )
