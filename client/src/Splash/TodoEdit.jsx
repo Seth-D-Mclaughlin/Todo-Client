@@ -1,5 +1,6 @@
 import { List, Table, Button, Form, FormGroup, Label, Input, Modal, ModalHeader, ModalBody } from "reactstrap";
 import React, { useEffect, useState } from "react";
+import APIURL from '../helpers/environment';
 
 const TodoEdit = (props) => {
   const [editTitle, setEditTitle] = useState(props.todoUpdate.title);
@@ -8,7 +9,7 @@ const TodoEdit = (props) => {
 
   const todoUpdate = (event) => {
     event.preventDefault();
-    fetch(`http://localhost:3001/task/${props.todoUpdate.id}`, {
+    fetch(`${APIURL}/task/${props.todoUpdate.id}`, {
       method: 'PUT',
       body: JSON.stringify({title: editTitle, notes: editNotes}),
       headers: {
@@ -38,7 +39,7 @@ const TodoEdit = (props) => {
               <Input name="note" value={editNotes} onChange={(e) => setEditNotes(e.target.value)}/>
               <br/>
             </FormGroup>
-          <Button type="submit">Update Your Todos!</Button>
+          <Button id="splash-button" type="submit">Update Your Todos!</Button>
           </Form>
         </ModalBody>
       </Modal>

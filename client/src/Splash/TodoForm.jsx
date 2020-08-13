@@ -2,6 +2,7 @@ import { Button, TextField } from "@material-ui/core";
 import React, { useState } from "react";
 import {v4 as uuid} from "uuid";
 import {Form, FormGroup, Label, Input} from 'reactstrap';
+import APIURL from '../helpers/environment';
 
 const TodoForm = (props) => {
   
@@ -13,7 +14,7 @@ const TodoForm = (props) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    fetch("http://localhost:3001/task/create", {
+    fetch(`${APIURL}/task/create`, {
       method: 'POST',
       body: JSON.stringify({task:{title: title, notes: notes, isImportant: important, isComplete: complete}}),
       headers: {
@@ -33,7 +34,7 @@ const TodoForm = (props) => {
 
   return(
     <>
-    <h1 className="text-center mt-5">Buddy List</h1>
+    {/* <h1 className="text-center mt-5">List Buddy</h1> */}
       
     <form onSubmit={handleSubmit} >
         <div className="form-group">
@@ -55,7 +56,7 @@ const TodoForm = (props) => {
           />
           </div>
 
-        <button className="btn btn-outline-warning">Add</button>
+        <button className="btn btn-dark mt-1">Add ToDo</button>
       </form>
           </>
   )
