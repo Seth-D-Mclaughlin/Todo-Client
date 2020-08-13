@@ -38,7 +38,7 @@ const TodoEdit = (props) => {
               <Input name="note" value={editNotes} onChange={(e) => setEditNotes(e.target.value)}/>
               <br/>
             </FormGroup>
-          <Button type="submit">Update Your Todos!</Button>
+          <Button id="splash-button" type="submit">Update Your Todos!</Button>
           </Form>
         </ModalBody>
       </Modal>
