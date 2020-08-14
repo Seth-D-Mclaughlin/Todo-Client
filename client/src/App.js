@@ -16,7 +16,7 @@ function App() {
     ) : (
       <Auth updateToken={updateToken} />
     )
-  }
+  } ////
 
   const updateToken = (newToken) => {
     localStorage.setItem('token: ', newToken)
